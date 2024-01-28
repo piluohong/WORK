@@ -1,0 +1,390 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7b9e8/fast && /usr/bin/make  -f CMakeFiles/cmTC_7b9e8.dir/build.make CMakeFiles/cmTC_7b9e8.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_7b9e8.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7b9e8.dir/src.c.o -c /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_7b9e8
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b9e8.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_7b9e8.dir/src.c.o -o cmTC_7b9e8 
+CMakeFiles/cmTC_7b9e8.dir/src.c.o：在函数‘main’中：
+src.c:(.text+0x3e)：对‘pthread_create’未定义的引用
+src.c:(.text+0x4a)：对‘pthread_detach’未定义的引用
+src.c:(.text+0x56)：对‘pthread_cancel’未定义的引用
+src.c:(.text+0x67)：对‘pthread_join’未定义的引用
+src.c:(.text+0x7b)：对‘pthread_atfork’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7b9e8.dir/build.make:98: recipe for target 'cmTC_7b9e8' failed
+make[1]: *** [cmTC_7b9e8] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_7b9e8/fast' failed
+make: *** [cmTC_7b9e8/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_89d1f/fast && /usr/bin/make  -f CMakeFiles/cmTC_89d1f.dir/build.make CMakeFiles/cmTC_89d1f.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_89d1f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_89d1f.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_89d1f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89d1f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_89d1f.dir/CheckFunctionExists.c.o -o cmTC_89d1f  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_89d1f.dir/build.make:98: recipe for target 'cmTC_89d1f' failed
+make[1]: *** [cmTC_89d1f] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_89d1f/fast' failed
+make: *** [cmTC_89d1f/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e86d3/fast && /usr/bin/make  -f CMakeFiles/cmTC_e86d3.dir/build.make CMakeFiles/cmTC_e86d3.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_e86d3.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_e86d3.dir/src.c.o -c /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e86d3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e86d3.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_e86d3.dir/src.c.o -o cmTC_e86d3 
+CMakeFiles/cmTC_e86d3.dir/src.c.o：在函数‘main’中：
+src.c:(.text+0x3e)：对‘pthread_create’未定义的引用
+src.c:(.text+0x4a)：对‘pthread_detach’未定义的引用
+src.c:(.text+0x56)：对‘pthread_cancel’未定义的引用
+src.c:(.text+0x67)：对‘pthread_join’未定义的引用
+src.c:(.text+0x7b)：对‘pthread_atfork’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_e86d3.dir/build.make:98: recipe for target 'cmTC_e86d3' failed
+make[1]: *** [cmTC_e86d3] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_e86d3/fast' failed
+make: *** [cmTC_e86d3/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b2f0a/fast && /usr/bin/make  -f CMakeFiles/cmTC_b2f0a.dir/build.make CMakeFiles/cmTC_b2f0a.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_b2f0a.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_b2f0a.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b2f0a
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2f0a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_b2f0a.dir/CheckFunctionExists.c.o -o cmTC_b2f0a  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b2f0a.dir/build.make:98: recipe for target 'cmTC_b2f0a' failed
+make[1]: *** [cmTC_b2f0a] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_b2f0a/fast' failed
+make: *** [cmTC_b2f0a/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_cfd11/fast && /usr/bin/make  -f CMakeFiles/cmTC_cfd11.dir/build.make CMakeFiles/cmTC_cfd11.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_cfd11.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_cfd11.dir/src.c.o -c /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_cfd11
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cfd11.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_cfd11.dir/src.c.o -o cmTC_cfd11 
+CMakeFiles/cmTC_cfd11.dir/src.c.o：在函数‘main’中：
+src.c:(.text+0x3e)：对‘pthread_create’未定义的引用
+src.c:(.text+0x4a)：对‘pthread_detach’未定义的引用
+src.c:(.text+0x56)：对‘pthread_cancel’未定义的引用
+src.c:(.text+0x67)：对‘pthread_join’未定义的引用
+src.c:(.text+0x7b)：对‘pthread_atfork’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_cfd11.dir/build.make:98: recipe for target 'cmTC_cfd11' failed
+make[1]: *** [cmTC_cfd11] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_cfd11/fast' failed
+make: *** [cmTC_cfd11/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_72732/fast && /usr/bin/make  -f CMakeFiles/cmTC_72732.dir/build.make CMakeFiles/cmTC_72732.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_72732.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_72732.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_72732
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72732.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_72732.dir/CheckFunctionExists.c.o -o cmTC_72732  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_72732.dir/build.make:98: recipe for target 'cmTC_72732' failed
+make[1]: *** [cmTC_72732] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_72732/fast' failed
+make: *** [cmTC_72732/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_16b75/fast && /usr/bin/make  -f CMakeFiles/cmTC_16b75.dir/build.make CMakeFiles/cmTC_16b75.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_16b75.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_16b75.dir/src.c.o -c /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_16b75
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16b75.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_16b75.dir/src.c.o -o cmTC_16b75 
+CMakeFiles/cmTC_16b75.dir/src.c.o：在函数‘main’中：
+src.c:(.text+0x3e)：对‘pthread_create’未定义的引用
+src.c:(.text+0x4a)：对‘pthread_detach’未定义的引用
+src.c:(.text+0x56)：对‘pthread_cancel’未定义的引用
+src.c:(.text+0x67)：对‘pthread_join’未定义的引用
+src.c:(.text+0x7b)：对‘pthread_atfork’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_16b75.dir/build.make:98: recipe for target 'cmTC_16b75' failed
+make[1]: *** [cmTC_16b75] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_16b75/fast' failed
+make: *** [cmTC_16b75/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_8888f/fast && /usr/bin/make  -f CMakeFiles/cmTC_8888f.dir/build.make CMakeFiles/cmTC_8888f.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_8888f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_8888f.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8888f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8888f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_8888f.dir/CheckFunctionExists.c.o -o cmTC_8888f  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_8888f.dir/build.make:98: recipe for target 'cmTC_8888f' failed
+make[1]: *** [cmTC_8888f] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_8888f/fast' failed
+make: *** [cmTC_8888f/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_76975/fast && /usr/bin/make  -f CMakeFiles/cmTC_76975.dir/build.make CMakeFiles/cmTC_76975.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_76975.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_76975.dir/src.c.o -c /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_76975
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76975.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_76975.dir/src.c.o -o cmTC_76975 
+CMakeFiles/cmTC_76975.dir/src.c.o：在函数‘main’中：
+src.c:(.text+0x3e)：对‘pthread_create’未定义的引用
+src.c:(.text+0x4a)：对‘pthread_detach’未定义的引用
+src.c:(.text+0x56)：对‘pthread_cancel’未定义的引用
+src.c:(.text+0x67)：对‘pthread_join’未定义的引用
+src.c:(.text+0x7b)：对‘pthread_atfork’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_76975.dir/build.make:98: recipe for target 'cmTC_76975' failed
+make[1]: *** [cmTC_76975] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_76975/fast' failed
+make: *** [cmTC_76975/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_cfb5b/fast && /usr/bin/make  -f CMakeFiles/cmTC_cfb5b.dir/build.make CMakeFiles/cmTC_cfb5b.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_cfb5b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_cfb5b.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cfb5b
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cfb5b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_cfb5b.dir/CheckFunctionExists.c.o -o cmTC_cfb5b  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_cfb5b.dir/build.make:98: recipe for target 'cmTC_cfb5b' failed
+make[1]: *** [cmTC_cfb5b] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_cfb5b/fast' failed
+make: *** [cmTC_cfb5b/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_5a468/fast && /usr/bin/make  -f CMakeFiles/cmTC_5a468.dir/build.make CMakeFiles/cmTC_5a468.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_5a468.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_5a468.dir/src.c.o -c /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5a468
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5a468.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_5a468.dir/src.c.o -o cmTC_5a468 
+CMakeFiles/cmTC_5a468.dir/src.c.o：在函数‘main’中：
+src.c:(.text+0x3e)：对‘pthread_create’未定义的引用
+src.c:(.text+0x4a)：对‘pthread_detach’未定义的引用
+src.c:(.text+0x56)：对‘pthread_cancel’未定义的引用
+src.c:(.text+0x67)：对‘pthread_join’未定义的引用
+src.c:(.text+0x7b)：对‘pthread_atfork’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_5a468.dir/build.make:98: recipe for target 'cmTC_5a468' failed
+make[1]: *** [cmTC_5a468] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_5a468/fast' failed
+make: *** [cmTC_5a468/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_1d579/fast && /usr/bin/make  -f CMakeFiles/cmTC_1d579.dir/build.make CMakeFiles/cmTC_1d579.dir/build
+make[1]: 进入目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_1d579.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_1d579.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.24/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1d579
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d579.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_1d579.dir/CheckFunctionExists.c.o -o cmTC_1d579  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_1d579.dir/build.make:98: recipe for target 'cmTC_1d579' failed
+make[1]: *** [cmTC_1d579] Error 1
+make[1]: 离开目录“/home/h/hong.MD.degree/test/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_1d579/fast' failed
+make: *** [cmTC_1d579/fast] Error 2
+
+
+
