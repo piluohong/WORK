@@ -2,11 +2,11 @@
  * @Author: piluohong 1912694135@qq.com
  * @Date: 2024-01-26 21:41:19
  * @LastEditors: piluohong 1912694135@qq.com
- * @LastEditTime: 2024-01-27 22:40:10
+ * @LastEditTime: 2024-01-29 16:05:30
  * @FilePath: /hong_ws/src/ls_slam/src/test.cpp
  * @Description: test matplotlibcpp
  */
-#include "../../matplotlib-cpp/matplotlibcpp.h"
+#include "matplotlib-cpp/matplotlibcpp.h"
 #include <Eigen/Dense>
 
 #include<iostream>

@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/extend_kf.dir/src/extend_kf.cpp.o"
-  "CMakeFiles/extend_kf.dir/src/extend_kf.cpp.o.d"
   "extend_kf"
   "extend_kf.pdb"
 )

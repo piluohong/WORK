@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hhh/project_hhh/temp/slam/slam_in_FSD/WORK/src/batch_least_square.cpp
+ceres/ceres.h
+-
+cmath
+-
+iostream
+-
+Eigen/Dense
+-
+

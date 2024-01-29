@@ -2,7 +2,7 @@
 #include <Eigen/Dense>
 #include <random>
 
-#include "../../matplotlib-cpp/matplotlibcpp.h"
+#include "matplotlib-cpp/matplotlibcpp.h"
 
 // 导入 Eigen 库
 using namespace Eigen;

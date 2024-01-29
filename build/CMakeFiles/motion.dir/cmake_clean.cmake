@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/motion.dir/src/motion.cpp.o"
-  "CMakeFiles/motion.dir/src/motion.cpp.o.d"
   "motion"
   "motion.pdb"
 )

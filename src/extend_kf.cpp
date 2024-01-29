@@ -2,7 +2,7 @@
  * @Author: piluohong 1912694135@qq.com
  * @Date: 2024-01-28 12:48:53
  * @LastEditors: piluohong 1912694135@qq.com
- * @LastEditTime: 2024-01-28 15:16:14
+ * @LastEditTime: 2024-01-29 16:05:59
  * @FilePath: /hong.MD.degree/test/src/extend_kf.cpp
  * @Description: 扩展卡尔曼滤波
  *  */
@@ -10,7 +10,7 @@
 #include <Eigen/Dense>
 #include <random>
 
-#include "../include/matplotlib-cpp/matplotlibcpp.h"
+#include "matplotlib-cpp/matplotlibcpp.h"
 
 namespace plt = matplotlibcpp;
 

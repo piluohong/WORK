@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/kalmanfilter.dir/src/kalmanfilter.cpp.o"
-  "CMakeFiles/kalmanfilter.dir/src/kalmanfilter.cpp.o.d"
   "kalmanfilter"
   "kalmanfilter.pdb"
 )
