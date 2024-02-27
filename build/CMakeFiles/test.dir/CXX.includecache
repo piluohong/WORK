@@ -43,6 +43,10 @@ iostream
 -
 cmath
 -
+map
+-
+fstream
+-
 
 /usr/include/python3.8/Python.h
 patchlevel.h
