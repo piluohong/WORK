@@ -34,7 +34,7 @@ numpy/arrayobject.h
 opencv2/opencv.hpp
 -
 
-/home/hhh/project_hhh/temp/slam/slam_in_FSD/WORK/src/extend_kf.cpp
+/home/hhh/project_hhh/temp/slam/WORK/src/extend_kf.cpp
 iostream
 -
 Eigen/Dense
@@ -42,7 +42,7 @@ Eigen/Dense
 random
 -
 matplotlib-cpp/matplotlibcpp.h
-/home/hhh/project_hhh/temp/slam/slam_in_FSD/WORK/src/matplotlib-cpp/matplotlibcpp.h
+/home/hhh/project_hhh/temp/slam/WORK/src/matplotlib-cpp/matplotlibcpp.h
 
 /usr/include/python3.8/Python.h
 patchlevel.h

@@ -2,7 +2,7 @@
  * @Author: piluohong 1912694135@qq.com
  * @Date: 2024-01-26 21:41:19
  * @LastEditors: piluohong 1912694135@qq.com
- * @LastEditTime: 2024-02-27 16:11:41
+ * @LastEditTime: 2024-02-28 12:32:10
  * @FilePath: /hong_ws/src/ls_slam/src/test.cpp
  * @Description: test matplotlibcpp
  */
@@ -129,7 +129,9 @@ int main(int argc,char*argv[])
 
   plt::figure(); // declare a new figure (optional if only one is used)
   plt::grid(true);
-  plt::plot(data_x, data_y,{{"label", "Path"},{"color", "r"}});  
+  plt::plot(data_x, data_y,{{"label", "Path"},{"color", "r"}});
+  plt::plot({data_x[0]}, {data_y[0]}, "o");
+  plt::plot({data_x.back()}, {data_y.back()}, "x");
   plt::legend();                      // automatic coloring: tab:blue
   plt::title("Path Result"); // set a title
   plt::show();

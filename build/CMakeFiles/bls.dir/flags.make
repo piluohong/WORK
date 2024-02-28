@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++14
 
 CXX_DEFINES = -DGFLAGS_DLL_DECLARE_FLAG="" -DGFLAGS_DLL_DEFINE_FLAG="" -DGFLAGS_IS_A_DLL=0 -DGOOGLE_GLOG_DLL_DECL=""
 
-CXX_INCLUDES = -I/home/hhh/project_hhh/temp/slam/slam_in_FSD/WORK/include -I/usr/include/python3.8 
+CXX_INCLUDES = -I/home/hhh/project_hhh/temp/slam/WORK/include -I/usr/include/python3.8 
 
