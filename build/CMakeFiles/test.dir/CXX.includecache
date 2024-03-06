@@ -47,6 +47,8 @@ map
 -
 fstream
 -
+sstream
+-
 
 /usr/include/python3.8/Python.h
 patchlevel.h
