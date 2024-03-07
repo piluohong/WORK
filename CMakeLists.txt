@@ -15,7 +15,7 @@ include_directories(
 
 
 
-add_executable(test src/test.cpp)
+add_executable(test src/plot.cpp)
 target_include_directories(test PRIVATE ${PYTHON_INCLUDE_DIRS})
 target_link_libraries(test ${PYTHON_LIBRARIES})
 

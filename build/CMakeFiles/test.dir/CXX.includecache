@@ -34,7 +34,7 @@ numpy/arrayobject.h
 opencv2/opencv.hpp
 -
 
-/home/hhh/project_hhh/temp/slam/WORK/src/test.cpp
+/home/hhh/project_hhh/temp/slam/WORK/src/plot.cpp
 matplotlib-cpp/matplotlibcpp.h
 /home/hhh/project_hhh/temp/slam/WORK/src/matplotlib-cpp/matplotlibcpp.h
 Eigen/Dense

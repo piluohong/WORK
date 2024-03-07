@@ -2,7 +2,7 @@
  * @Author: piluohong 1912694135@qq.com
  * @Date: 2024-01-26 21:41:19
  * @LastEditors: piluohong 1912694135@qq.com
- * @LastEditTime: 2024-03-06 17:56:30
+ * @LastEditTime: 2024-03-07 15:20:27
  * @FilePath: /hong_ws/src/ls_slam/src/test.cpp
  * @Description: test matplotlibcpp
  */
@@ -114,18 +114,24 @@ int main(int argc,char*argv[])
 //   std::string data_path = argv[1];
   std::string odom_time = argv[1];
   std::string submap_time = argv[2];
-  std::string loop_time = argv[3];
-  std::string total_time = argv[4];
+  // std::string loop_time = argv[3];
+  // std::string total_time = argv[3];
 
   std::vector<float> data_odom;
   std::vector<float> data_submap;
-  std::vector<float> data_loop;
+  // std::vector<float> data_loop;
   std::vector<float> data_total;
 
   readfile(odom_time,data_odom);
   readfile(submap_time,data_submap);
-  readfile(loop_time,data_loop);
-  readfile(total_time,data_total);
+  // readfile(loop_time,data_loop);
+  // readfile(total_time,data_total);
+  for (size_t i = 0; i < data_odom.size(); i++)
+  {
+    if(i < data_submap.size()){
+      data_total.push_back(data_odom[i] + data_submap[i]);
+    } else {break;}
+  }
   
   //中位数
   
@@ -135,7 +141,7 @@ int main(int argc,char*argv[])
   plt::grid(true);
   plt::plot(data_odom, {{"label", "Odom"},{"color", "r"}});
   plt::plot(data_submap, {{"label", "Local_map"},{"color", "b"}});
-//   plt::plot(data_loop, {{"label", "Loop"},{"color", "g"}});
+//   plt::plot(data_loop,{{"label", "Loop"},{"color", "g"}});
   plt::plot(data_total, {{"label", "Total"},{"color", "y"}});
   plt::xlabel("Frame number");
   plt::ylabel("Cost time(ms)");

@@ -283,32 +283,32 @@ src/motion.cpp.s:
 	$(MAKE) -f CMakeFiles/motion.dir/build.make CMakeFiles/motion.dir/src/motion.cpp.s
 .PHONY : src/motion.cpp.s
 
-src/test.o: src/test.cpp.o
+src/plot.o: src/plot.cpp.o
 
-.PHONY : src/test.o
+.PHONY : src/plot.o
 
 # target to build an object file
-src/test.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/test.cpp.o
-.PHONY : src/test.cpp.o
+src/plot.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/plot.cpp.o
+.PHONY : src/plot.cpp.o
 
-src/test.i: src/test.cpp.i
+src/plot.i: src/plot.cpp.i
 
-.PHONY : src/test.i
+.PHONY : src/plot.i
 
 # target to preprocess a source file
-src/test.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/test.cpp.i
-.PHONY : src/test.cpp.i
+src/plot.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/plot.cpp.i
+.PHONY : src/plot.cpp.i
 
-src/test.s: src/test.cpp.s
+src/plot.s: src/plot.cpp.s
 
-.PHONY : src/test.s
+.PHONY : src/plot.s
 
 # target to generate assembly for a file
-src/test.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/test.cpp.s
-.PHONY : src/test.cpp.s
+src/plot.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/plot.cpp.s
+.PHONY : src/plot.cpp.s
 
 # Help Target
 help:
@@ -335,9 +335,9 @@ help:
 	@echo "... src/motion.o"
 	@echo "... src/motion.i"
 	@echo "... src/motion.s"
-	@echo "... src/test.o"
-	@echo "... src/test.i"
-	@echo "... src/test.s"
+	@echo "... src/plot.o"
+	@echo "... src/plot.i"
+	@echo "... src/plot.s"
 .PHONY : help
 
 
