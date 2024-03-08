@@ -2,7 +2,7 @@
  * @Author: piluohong 1912694135@qq.com
  * @Date: 2024-01-26 21:41:19
  * @LastEditors: piluohong 1912694135@qq.com
- * @LastEditTime: 2024-03-07 15:20:27
+ * @LastEditTime: 2024-03-08 11:42:40
  * @FilePath: /hong_ws/src/ls_slam/src/test.cpp
  * @Description: test matplotlibcpp
  */
@@ -14,6 +14,7 @@
 #include <map>
 #include <fstream>
 #include <sstream>
+#include <opencv2/opencv.hpp>
 
 namespace plt = matplotlibcpp;
 
@@ -77,7 +78,7 @@ std::vector<std::string> splitString(const std::string &s, const std::string &se
     return result;
 }
 
-void readfile(std::string data_path,std::vector<float>& data_)
+void readfile(std::string data_path,std::vector<float>& data_x,std::vector<float>& data_y)
 {
   std::ifstream fin(data_path.c_str());
   if(fin.is_open() == false)
@@ -92,18 +93,39 @@ void readfile(std::string data_path,std::vector<float>& data_)
   {
          cnt++;
          std::vector<std::string> results;
-    //   results = splitString(line," ");
+      results = splitString(line," ");
 
-    //   double x = stringToNum<double>(results[1]);
-    //   double y = stringToNum<double>(results[2]);
-         std::istringstream iss(line);
-         std::string firststring;
-         iss >> firststring;
-         float t = stringToNum<float>(firststring);
-         std::cout << t << std::endl;
-         data_.push_back(t);
-    //   data_x.push_back(x);
-    //   data_y.push_back(y);
+      double x = stringToNum<double>(results[1]);
+      double y = stringToNum<double>(results[2]);
+      
+      data_x.push_back(x);
+      data_y.push_back(y);
+  }
+      
+  fin.close();
+}
+
+void readfile(std::string data_path,std::vector<float>& data_)
+{
+  std::ifstream fin(data_path.c_str());
+  if(fin.is_open() == false)
+  {
+      std::cout <<"Read File Failed!!!"<<std::endl;
+      return;
+  }
+
+  int cnt = 0;
+  std::string line;
+  while(std::getline(fin,line))
+  {
+    cnt++;
+    std::istringstream iss(line);
+    std::string firststring;
+    iss >> firststring;
+    float t = stringToNum<float>(firststring);
+    std::cout << t << std::endl;
+    data_.push_back(t);
+      
   }
       
   fin.close();
@@ -111,44 +133,45 @@ void readfile(std::string data_path,std::vector<float>& data_)
 
 int main(int argc,char*argv[])
 {
-//   std::string data_path = argv[1];
-  std::string odom_time = argv[1];
-  std::string submap_time = argv[2];
+  std::string data_path = argv[1];
+  // std::string odom_time = argv[1];
+  // std::string submap_time = argv[2];
   // std::string loop_time = argv[3];
   // std::string total_time = argv[3];
+  std::vector<float> data_x; 
+  std::vector<float> data_y;
+  // std::vector<float> data_odom;
+  // std::vector<float> data_submap;
+  // // std::vector<float> data_loop;
+  // std::vector<float> data_total;
 
-  std::vector<float> data_odom;
-  std::vector<float> data_submap;
-  // std::vector<float> data_loop;
-  std::vector<float> data_total;
-
-  readfile(odom_time,data_odom);
-  readfile(submap_time,data_submap);
-  // readfile(loop_time,data_loop);
-  // readfile(total_time,data_total);
-  for (size_t i = 0; i < data_odom.size(); i++)
-  {
-    if(i < data_submap.size()){
-      data_total.push_back(data_odom[i] + data_submap[i]);
-    } else {break;}
-  }
-  
-  //中位数
+    readfile(data_path,data_x,data_y);
+  // readfile(odom_time,data_odom);
+  // readfile(submap_time,data_submap);
+  // // readfile(loop_time,data_loop);
+  // // readfile(total_time,data_total);
+  // for (size_t i = 0; i < data_odom.size(); i++)
+  // {
+  //   if(i < data_submap.size()){
+  //     data_total.push_back(data_odom[i] + data_submap[i]);
+  //   } else {break;}
+  // }
   
 //   std::cout << ">>> " << data_odom.size() << std::endl;
 
   plt::figure(); // declare a new figure (optional if only one is used)
   plt::grid(true);
-  plt::plot(data_odom, {{"label", "Odom"},{"color", "r"}});
-  plt::plot(data_submap, {{"label", "Local_map"},{"color", "b"}});
-//   plt::plot(data_loop,{{"label", "Loop"},{"color", "g"}});
-  plt::plot(data_total, {{"label", "Total"},{"color", "y"}});
-  plt::xlabel("Frame number");
-  plt::ylabel("Cost time(ms)");
+  auto img = cv::imread("./mango.png");
+  // plt::plot(data_odom, {{"label", "Odom"},{"color", "r"}});
+  // plt::plot(data_submap, {{"label", "Local_map"},{"color", "b"}});
+  plt::plot(data_x,data_y,{{"label", "Path"},{"color", "b"}});
+  // plt::plot(data_total, {{"label", "Total"},{"color", "y"}});
+  // plt::xlabel("Frame number");
+  // plt::ylabel("Cost time(ms)");
 //   plt::plot({data_x[0]}, {data_y[0]}, "o");
 //   plt::plot({data_x.back()}, {data_y.back()}, "x");
   plt::legend();                      // automatic coloring: tab:blue
-  plt::title("Time Result in Mixture Scene Dataset"); // set a title
+  plt::title("Result in Mango Scene Dataset"); // set a title
   plt::show();
   
 }

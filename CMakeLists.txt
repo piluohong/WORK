@@ -8,6 +8,7 @@ find_package(Eigen3  REQUIRED)
 find_package(gflags REQUIRED)
 find_package(Glog  REQUIRED)
 find_package(Ceres REQUIRED)
+find_package(OpenCV 4 REQUIRED)
 
 include_directories(
     include
@@ -17,7 +18,7 @@ include_directories(
 
 add_executable(test src/plot.cpp)
 target_include_directories(test PRIVATE ${PYTHON_INCLUDE_DIRS})
-target_link_libraries(test ${PYTHON_LIBRARIES})
+target_link_libraries(test ${PYTHON_LIBRARIES} ${OpenCV_LIBRARIES})
 
 add_executable(motion src/motion.cpp)
 target_include_directories(motion PRIVATE ${PYTHON_INCLUDE_DIRS})
